@@ -30,7 +30,7 @@
     "webRequest",
     "proxy",
 
-    "https://am.i.mullvad.net/json"
+    "https://stage-vpn.guardian.nonprod.cloudops.mozgcp.net/*"
   ],
   "optional_permissions": [
     "bookmarks"

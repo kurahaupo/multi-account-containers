@@ -1546,12 +1546,14 @@ Logic.registerPanel(P_CONTAINER_MOZ_VPN_PROXY, {
   async prepare() {
     const serversListEl = document.getElementById("choose-moz-vpn-proxy-server-list");
     const promoEl = document.getElementById("choose-moz-vpn-proxy-promo");
+    /*
     const mullvadInfo = await browser.runtime.sendMessage({
       method: "getMullvadInfo"
     });
     console.log(`mullvadInfo: ${mullvadInfo}`);
     console.log(`mullvadInfo.mullvad_exit_ip: ${mullvadInfo.mullvad_exit_ip}`);
     if (mullvadInfo.mullvad_exit_ip) {
+    */
       const mullvadServers = await browser.runtime.sendMessage({
         method: "getMullvadServers"
       });
@@ -1564,7 +1566,7 @@ Logic.registerPanel(P_CONTAINER_MOZ_VPN_PROXY, {
       serversListEl.appendChild(serversUl);
       promoEl.classList.add("hide");
       serversListEl.classList.remove("hide");
-    }
+    // }
     return Promise.resolve(null);
   },
 });

@@ -43,7 +43,7 @@ const backgroundLogic = {
 
   async getMullvadServers() {
     console.log("getMullvadServers");
-    const mullvadServersPath = "https://stage-vpn.guardian.nonprod.cloudops.mozgcp.net/api/v1/vpn/servers";
+    const mullvadServersPath = "https://stage-vpn.guardian.nonprod.cloudops.mozgcp.net:443/api/v1/vpn/servers";
     console.log(`mullvadServersPath: ${mullvadServersPath}`);
     const response = await fetch(mullvadServersPath, {
       "credentials": "omit",
