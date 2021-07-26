@@ -42,6 +42,13 @@ const backgroundLogic = {
   },
 
   async getMullvadServers() {
+    const port = browser.runtime.connectNative("mozillavpnnp");
+
+    port.onMessage.addListener(response => {
+      console.log("Received message: " + JSON.stringify(response));
+    });
+
+    port.postMessage({t: "servers"});
     console.log("getMullvadServers");
     const mullvadServersPath = "https://stage-vpn.guardian.nonprod.cloudops.mozgcp.net:443/api/v1/vpn/servers";
     console.log(`mullvadServersPath: ${mullvadServersPath}`);
